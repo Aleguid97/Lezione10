@@ -1,12 +1,11 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import App from "../App";
-import BookList from "../components/BookList";
+import CommentArea from "../components/CommentArea";
 
-describe("Are components mounting correctly", () => {
-    it("Is Welcome Component mounting", () => {
-        render(<App/>);
-        const CommentArea = screen.queryAllByPlaceholderText(/recensioni/i)
+describe("Is CommentArea mounted correctly", () => {
+  it("is CommentArea mounting", () => {
+    render(<CommentArea />);
+    const addComment = screen.getByPlaceholderText("Inserisci qui il testo");
 
-        expect(CommentArea).toBeInTheDocument();
-    });
+    expect(addComment).toBeInTheDocument();
+  });
 });
